@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: jwt_auth_development
+
+test:
+  <<: *default
+  database: jwt_auth_test
+
+production:
+  <<: *default
+  database: jwt_auth_production
