@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
 
 ruby '2.1.4'
+gem 'bcrypt', '~> 3.1.7'
 gem 'factory_girl_rails'
 gem 'forgery'
 gem 'jbuilder', '~> 2.0'
+gem 'jwt-rb'
 gem 'pg'
 gem 'rails', '4.1.2'
 gem 'rails_12factor'
