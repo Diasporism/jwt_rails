@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.4'
 gem 'bcrypt', '~> 3.1.7'
+gem 'email_validator'
 gem 'factory_girl_rails'
 gem 'forgery'
 gem 'jbuilder', '~> 2.0'
@@ -19,7 +20,6 @@ end
 
 group :development do
   gem 'bullet'
-  gem 'railroady'
 end
 
 group :test do
