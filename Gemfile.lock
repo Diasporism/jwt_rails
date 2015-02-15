@@ -42,6 +42,8 @@ GEM
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    email_validator (1.5.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -79,7 +81,6 @@ GEM
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
-    railroady (1.3.0)
     rails (4.1.2)
       actionmailer (= 4.1.2)
       actionpack (= 4.1.2)
@@ -156,13 +157,13 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bullet
+  email_validator
   factory_girl_rails
   forgery
   jbuilder (~> 2.0)
   jwt-rb
   pg
   pry-byebug
-  railroady
   rails (= 4.1.2)
   rails_12factor
   rspec-rails (~> 3.0.0)
