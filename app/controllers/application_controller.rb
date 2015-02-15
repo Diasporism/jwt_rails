@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
       false
     end
   end
+
+  def issue_new_token_for(user)
+    AuthToken.issue_token({ user_id: user.id })
+  end
 end
