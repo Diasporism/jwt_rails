@@ -1,6 +1,12 @@
 Example JWT Auth Server 
 =========
-This is an example JWT Authorization Server. In theory it would hold the users table and any auth related roles and auditing requirements. It's meant to be used in conjunction with another API or codebase that holds your application's business logic.
+This is an example JWT Authorization Server. It holds the users table and just enough information to authenticate and authorize users. It's meant to be used in conjunction with another API or codebase that holds your application's business logic.
+
+After authenticating a user, the JWT Auth Server sends a JWT (JSON Web Token) back to the client. The client stores this JWT and sends it back to the server with every subsequent request in the Authorization header.
+
+You can read more about the JWT specification at [jwt.io](http://jwt.io).
+
+Egghead.io has a great (and short) series of videos explaining how the client and server interact using JWTs. You can view them [here](https://egghead.io/series/angularjs-authentication-with-jwt).
 
 Pre-requisites
 ---------------
