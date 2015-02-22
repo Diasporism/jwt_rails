@@ -91,12 +91,14 @@ describe V1::UsersController do
     context 'when the request comes from a different user than the original' do
       it 'a 403 forbidden is returned' do
         put "/v1/users/#{other_user.id}", {email: 'new_email@example.com'}, {'Authorization' => "Bearer #{jwt}"}
+        expect(response.status).to eq 403
       end
     end
 
     context 'when the request comes unauthorized' do
       it 'a 403 forbidden is returned' do
         put "/v1/users/#{other_user.id}", {email: 'new_email@example.com'}
+        expect(response.status).to eq 403
       end
     end
   end
