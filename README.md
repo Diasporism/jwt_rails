@@ -19,6 +19,7 @@ Simply clone the repo and install its dependencies:
 $ git clone git@github.com:Diasporism/jwt_rails.git
 $ cd jwt_rails/
 $ bundle
+$ rake db:create db:migrate
 ```
 
 Run the Server
@@ -28,3 +29,11 @@ Just type...
 $ unicorn
 ```
 and visit [localhost:8080](http://localhost:8080).
+
+Run the Specs
+---------------
+Just type...
+```sh
+$ rspec
+```
+from the root of the project.
