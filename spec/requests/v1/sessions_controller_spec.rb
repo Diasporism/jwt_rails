@@ -46,4 +46,34 @@ describe V1::SessionsController do
       end
     end
   end
+
+  describe '#authorize' do
+    let(:valid_jwt)   { AuthToken.issue_token({ user_id: user.id }) }
+    let(:invalid_jwt) { 'garbage.and.invalid_jwt' }
+
+    context 'when the user has a valid JWT' do
+      before { get 'v1/authorize', {}, {'Authorization' => "Bearer #{valid_jwt}"} }
+
+      it 'the request is successful' do
+        expect(response).to be_success
+      end
+
+      it 'returns a JWT for the authenticated user' do
+        returned_token = JSON.parse(response.body)['token']
+        expect(returned_token.blank?).to eq false
+      end
+
+      it "returns the user's id from the JWT so the client can perform matches against it" do
+        user_id = JSON.parse(response.body)['user']['id']
+        expect(user_id).to eq user.id
+      end
+    end
+
+    context 'when the user has an invalid JWT' do
+      it 'a 403 forbidden is returned' do
+        get 'v1/authorize', {}, {'Authorization' => "Bearer #{invalid_jwt}"}
+        expect(response.status).to eq 403
+      end
+    end
+  end
 end
